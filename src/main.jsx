@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/about/About";
+import CommentDetails from "./components/commentDetails/CommentsDetails";
+import Comments from "./components/comments/comments";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
 import PostDetails from "./components/postDetails/PostDetails";
@@ -44,6 +46,19 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
         element: <PostDetails></PostDetails>,
+      },
+      {
+        path: "/comments",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/comments"),
+        element: <Comments></Comments>,
+      },
+      {
+        path: "/comment/:commetId",
+        loader: ({ params }) =>
+          fetch(
+            `https://jsonplaceholder.typicode.com/comments/${params.commetId}`
+          ),
+        element: <CommentDetails></CommentDetails>,
       },
     ],
   },

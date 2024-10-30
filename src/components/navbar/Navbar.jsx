@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between w-9/12 mx-auto pt-5">
+    <div className="flex justify-between items-center w-9/12 mx-auto pt-5">
       <h1 className="text-3xl">This is Navbar</h1>
       <div>
         <Link className="ml-5 text-blue-600" to="/">
@@ -19,6 +19,9 @@ export default function Navbar() {
         </Link>
         <Link className="ml-5 text-blue-600" to="/posts">
           Posts
+        </Link>
+        <Link className="ml-5 text-blue-600" to="/comments">
+          Comments
         </Link>
       </div>
     </div>
