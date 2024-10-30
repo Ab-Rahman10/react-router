@@ -17,6 +17,9 @@ export default function Navbar() {
         <Link className="ml-5 text-blue-600" to="/users">
           Users
         </Link>
+        <Link className="ml-5 text-blue-600" to="/posts">
+          Posts
+        </Link>
       </div>
     </div>
   );
