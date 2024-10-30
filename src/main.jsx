@@ -11,11 +11,13 @@ import Posts from "./components/posts/posts";
 import UserDetails from "./components/userDetails/UserDetails";
 import Users from "./components/users/Users";
 import "./index.css";
+import ErrorPage from "./components/errorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/about",
@@ -53,10 +55,10 @@ const router = createBrowserRouter([
         element: <Comments></Comments>,
       },
       {
-        path: "/comment/:commetId",
+        path: "/comment/:commentId",
         loader: ({ params }) =>
           fetch(
-            `https://jsonplaceholder.typicode.com/comments/${params.commetId}`
+            `https://jsonplaceholder.typicode.com/comments/${params.commentId}`
           ),
         element: <CommentDetails></CommentDetails>,
       },
