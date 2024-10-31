@@ -1,29 +1,33 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar() {
   return (
     <div className="flex justify-between items-center w-9/12 mx-auto pt-5">
       <h1 className="text-3xl">This is Navbar</h1>
-      <div>
-        <Link className="ml-5 text-blue-600" to="/">
+      <nav>
+        <NavLink className="ml-5 text-blue-600" to="/">
           Home
-        </Link>
-        <Link className="ml-5 text-blue-600" to="/about">
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/about">
           About
-        </Link>
-        <Link className="ml-5 text-blue-600" to="/contact">
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/contact">
           Contact Us
-        </Link>
-        <Link className="ml-5 text-blue-600" to="/users">
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/users">
           Users
-        </Link>
-        <Link className="ml-5 text-blue-600" to="/posts">
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/posts">
           Posts
-        </Link>
-        <Link className="ml-5 text-blue-600" to="/comments">
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/comments">
           Comments
-        </Link>
-      </div>
+        </NavLink>
+        <NavLink className="ml-5 text-blue-600" to="/products">
+          Products
+        </NavLink>
+      </nav>
     </div>
   );
 }

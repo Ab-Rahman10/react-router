@@ -12,6 +12,8 @@ import UserDetails from "./components/userDetails/UserDetails";
 import Users from "./components/users/Users";
 import "./index.css";
 import ErrorPage from "./components/errorPage/ErrorPage";
+import Products from "./components/products/Products";
+import ProductDetails from "./components/productDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,17 @@ const router = createBrowserRouter([
             `https://jsonplaceholder.typicode.com/comments/${params.commentId}`
           ),
         element: <CommentDetails></CommentDetails>,
+      },
+      {
+        path: "/products",
+        loader: () => fetch("https://fakestoreapi.com/products"),
+        element: <Products></Products>,
+      },
+      {
+        path: "/product/:productId",
+        loader: ({ params }) =>
+          fetch(`https://fakestoreapi.com/products/${params.productId}`),
+        element: <ProductDetails></ProductDetails>,
       },
     ],
   },
